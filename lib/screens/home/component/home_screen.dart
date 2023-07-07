@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     imgBlackLightening,
     blacklight
   ];
-  
+
   final List<String> actorNames = [
     johnKrasinski,
     emilyBlunt,
@@ -290,7 +290,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: myStyle(
                       color: wColor, size: 18.sp, weight: FontWeight.w500),
                 ),
-                addWidth(152.w),
+                Spacer(),
                 Text(
                   seall,
                   style: myStyle(
@@ -342,8 +342,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
                   itemBuilder: (context, index) {
-                    return Padding(padding: EdgeInsets.only(right: 25),
-                    child: HomeSliderWidget(),
+                    return Padding(
+                      padding: EdgeInsets.only(right: 25),
+                      child: HomeSliderWidget(),
                     );
                   },
                 ),

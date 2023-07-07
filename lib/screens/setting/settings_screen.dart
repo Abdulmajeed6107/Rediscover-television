@@ -1,4 +1,3 @@
-
 import '../../const/const.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -9,12 +8,11 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
-  bool darkMode = false;
+  bool darkMode = true;
 
   final CustomSwitchController _controller = CustomSwitchController();
   var _state = true;
 
-  
   @override
   void initState() {
     super.initState();
@@ -64,8 +62,9 @@ class _SettingScreenState extends State<SettingScreen> {
                 Text(
                   general,
                   style: myStyle(
-                                               color: darkMode ? wColor : bgColor,
- size: 16.sp, weight: FontWeight.w500),
+                      color: darkMode ? wColor : bgColor,
+                      size: 16.sp,
+                      weight: FontWeight.w500),
                 ),
                 addHeight(12.h),
                 CustomElevateddButton(
@@ -94,37 +93,38 @@ class _SettingScreenState extends State<SettingScreen> {
                       child: Text(
                         fullhd,
                         style: myStyle(
-                            size: 13.sp, weight: FontWeight.w400, color: lgColor),
+                            size: 13.sp,
+                            weight: FontWeight.w400,
+                            color: lgColor),
                       ),
                     ),
                     onTap: () {}),
                 addHeight(15.h),
-                CustomElevateddButton(
-                    title: notification,
-                    prefixIcon: Image.asset(
-                      icNotification,
-                      width: 24.w,
-                      height: 24.h,
-                    ),
-                    suffixIcon: Padding(
-                      padding: const EdgeInsets.only(left: 40),
-                      child: CustomSwitchdButton(),
-                    ),
-                    onTap: () {}),
+                switchElevatedButton(
+                  title: notification,
+                  prefixIcon: Image.asset(
+                    icNotification,
+                    width: 24.w,
+                    height: 24.h,
+                  ),
+                  addWidth: addWidth(20.w),
+                  suffixIcon: SizedBox(
+                      height: 20.h, width: 40.w, child: CustomSwitchdButton()),
+                  onTap: () {},
+                ),
                 addHeight(15.h),
-                CustomElevateddButton(
-                    title: autoplayvideos,
-                    prefixIcon: Image.asset(
-                      icNotification,
-                      width: 24.w,
-                      height: 24.h,
-                    ),
-                    suffixIcon: Padding(
-                      padding: const EdgeInsets.only(left: 12),
-                      child: CustomSwitchdButton(),
-                      
-                    ),
-                    onTap: () {}),
+                switchElevatedButton(
+                  title: autoplayvideos,
+                  prefixIcon: Image.asset(
+                    icNotification,
+                    width: 24.w,
+                    height: 24.h,
+                  ),
+                  addWidth: addWidth(20.w),
+                  suffixIcon: SizedBox(
+                      height: 20.h, width: 40.w, child: CustomSwitchdButton()),
+                  onTap: () {},
+                ),
                 addHeight(32.h),
                 Text(
                   cache,
@@ -139,7 +139,8 @@ class _SettingScreenState extends State<SettingScreen> {
                   child: LinearProgressIndicator(
                     value: 0.25,
                     backgroundColor: rColor,
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.transparent),
+                    valueColor:
+                        AlwaysStoppedAnimation<Color>(Colors.transparent),
                     // value: controller.value,
                     semanticsLabel: 'Linear progress indicator',
                   ),
@@ -161,30 +162,32 @@ class _SettingScreenState extends State<SettingScreen> {
                   ],
                 ),
                 addHeight(15.h),
-                CustomElevateddButton(
+                switchElevatedButton(
                     title: ecache,
                     prefixIcon: Image.asset(
                       icCache,
                       width: 24.w,
                       height: 24.h,
                     ),
-                    suffixIcon: Padding(
-                      padding: const EdgeInsets.only(left: 29),
-                      child: CustomSwitchdButton(),
-                    ),
+                    addWidth: addWidth(20.w),
+                    suffixIcon: SizedBox(
+                        height: 20.h,
+                        width: 40.w,
+                        child: CustomSwitchdButton()),
                     onTap: () {}),
                 addHeight(15.h),
-                CustomElevateddButton(
+                switchElevatedButton(
                     title: ccache,
                     prefixIcon: Image.asset(
                       icClear,
                       width: 24.w,
                       height: 24.h,
                     ),
-                    suffixIcon: Padding(
-                      padding: const EdgeInsets.only(left: 39),
-                      child: CustomSwitchdButton(),
-                    ),
+                    addWidth: addWidth(20.w),
+                    suffixIcon: SizedBox(
+                        height: 20.h,
+                        width: 40.w,
+                        child: CustomSwitchdButton()),
                     onTap: () {}),
                 addHeight(32.h),
                 Text(
@@ -205,7 +208,7 @@ class _SettingScreenState extends State<SettingScreen> {
                       width: 162.w,
                       height: 44.h,
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: rColor),
+                        style: ElevatedButton.styleFrom(primary: darkMode? rColor: containerColor),
                         onPressed: () {
                           setState(() {
                             darkMode = true;
@@ -213,13 +216,19 @@ class _SettingScreenState extends State<SettingScreen> {
                         },
                         child: Row(
                           children: [
-                            Image.asset(icLightMode, width: 24.w,
-                            height: 24.h
-                            ,),
+                            Image.asset(
+                              icLightMode,
+                              width: 24.w,
+                              height: 24.h,
+                            ),
                             addWidth(16.w),
-                            Text(darkmode, style: myStyle(
-                              color: wColor, size: 14.sp, weight: FontWeight.w400
-                            ),),
+                            Text(
+                              darkmode,
+                              style: myStyle(
+                                  color: wColor,
+                                  size: 14.sp,
+                                  weight: FontWeight.w400),
+                            ),
                           ],
                         ),
                       ),
@@ -228,7 +237,8 @@ class _SettingScreenState extends State<SettingScreen> {
                       width: 162.w,
                       height: 44.h,
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: containerColor),
+                        style:
+                            ElevatedButton.styleFrom(primary: darkMode ? containerColor : rColor,),
                         onPressed: () {
                           setState(() {
                             darkMode = false;
@@ -236,16 +246,18 @@ class _SettingScreenState extends State<SettingScreen> {
                         },
                         child: Row(
                           children: [
-                            
                             Padding(
                               padding: const EdgeInsets.only(left: 21),
-                              child: Text(lightmode, style: myStyle(size: 14.sp,
-                              weight: FontWeight.w400, color: wColor
-                              ),),
+                              child: Text(
+                                lightmode,
+                                style: myStyle(
+                                    size: 14.sp,
+                                    weight: FontWeight.w400,
+                                    color: wColor),
+                              ),
                             ),
                             addWidth(16.w),
-                            Image.asset(icDarkMode ,width: 24.w,
-                            height: 24.h),
+                            Image.asset(icDarkMode, width: 24.w, height: 24.h),
                           ],
                         ),
                       ),
@@ -269,12 +281,15 @@ class _SettingScreenState extends State<SettingScreen> {
                       height: 24.h,
                     ),
                     suffixIcon: Padding(
-                      padding:  EdgeInsets.only(left: 37.w),
-                      child: Icon(Icons.arrow_forward_ios, size: 13,),
+                      padding: EdgeInsets.only(left: 37.w),
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        size: 13,
+                      ),
                     ),
                     onTap: () {}),
-                    addHeight(15.h),
-                     CustomElevateddButton(
+                addHeight(15.h),
+                CustomElevateddButton(
                     title: help,
                     prefixIcon: Image.asset(
                       icHelp,
@@ -282,12 +297,15 @@ class _SettingScreenState extends State<SettingScreen> {
                       height: 24.h,
                     ),
                     suffixIcon: Padding(
-                      padding:  EdgeInsets.only(left: 100.w),
-                      child: Icon(Icons.arrow_forward_ios, size: 13,),
+                      padding: EdgeInsets.only(left: 100.w),
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        size: 13,
+                      ),
                     ),
                     onTap: () {}),
-                     addHeight(15.h),
-                     CustomElevateddButton(
+                addHeight(15.h),
+                CustomElevateddButton(
                     title: about,
                     prefixIcon: Image.asset(
                       icAboud,
@@ -295,11 +313,14 @@ class _SettingScreenState extends State<SettingScreen> {
                       height: 24.h,
                     ),
                     suffixIcon: Padding(
-                      padding:  EdgeInsets.only(left: 93.w),
-                      child: Icon(Icons.arrow_forward_ios, size: 13,),
+                      padding: EdgeInsets.only(left: 93.w),
+                      child: Icon(
+                        Icons.arrow_forward_ios,
+                        size: 13,
+                      ),
                     ),
                     onTap: () {}),
-                    addHeight(55.h)
+                addHeight(55.h)
               ],
             ),
           ),

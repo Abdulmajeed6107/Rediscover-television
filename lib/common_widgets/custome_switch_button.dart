@@ -2,9 +2,7 @@ import 'package:flutter_application_john/const/const.dart';
 
 // ignore: must_be_immutable
 class CustomSwitchdButton extends StatefulWidget {
-  
-  CustomSwitchdButton(
-      {super.key});
+  CustomSwitchdButton({super.key});
 
   @override
   State<CustomSwitchdButton> createState() => _CustomSwitchdButtonState();
@@ -29,18 +27,15 @@ class _CustomSwitchdButtonState extends State<CustomSwitchdButton> {
 
   @override
   Widget build(BuildContext context) {
-    return  CustomSwitchWidget(
-        width: 40.w,
-        height: 20.h,
-        activeColor: rColor,
-        controller: _controller,
-        onChange: (value) {
-          if (value)
-            _disable();
-          else
-            _enable();
-        },
-      );
-    
+    return CustomSwitchWidget(
+      activeColor: rColor,
+      controller: _controller,
+      onChange: (value) {
+        if (value)
+          _disable();
+        else
+          _enable();
+      },
+    );
   }
 }

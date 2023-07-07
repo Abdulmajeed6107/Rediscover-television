@@ -11,6 +11,7 @@ class _VikingRiviewScreenState extends State<VikingRiviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: backgrColor,
       body: Container(
         decoration: BoxDecoration(

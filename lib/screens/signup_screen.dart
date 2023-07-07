@@ -110,7 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: myStyle(
                         color: lgColor, weight: FontWeight.w400, size: 11.sp),
                   ),
-                  addWidth(21.w),
+                  Spacer(),
                   Text(
                     char,
                     style: myStyle(
@@ -223,21 +223,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: myStyle(
                         size: 14.sp, color: lgColor, weight: FontWeight.w400),
                   ),
-
-                  // Text(
-                  //   signin,
-                  //   style: myStyle(
-                  //       color: rColor, weight: FontWeight.w500, size: 14.sp),
-                  // ),
-                  // TextButton(
-                  // onPressed: () {
-                  //   Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) => SignInScreen())
-                  //   );
-                  //   }, child: Text("press", style: myStyle(color: rColor),),
-                  //   )
                   TextButton(
                     onPressed: () {
                       Navigator.push(

@@ -6,10 +6,12 @@ class switchElevatedButton extends StatelessWidget {
   final Widget? suffixIcon;
   final Widget prefixIcon;
   VoidCallback onTap;
+  final Widget addWidth;
   switchElevatedButton(
       {required this.title,
       required this.prefixIcon, 
       this.suffixIcon,
+      required this.addWidth,
       required this.onTap});
 
   @override
@@ -24,9 +26,9 @@ class switchElevatedButton extends StatelessWidget {
                       child: Row(
                         children: [
                           prefixIcon,
-                          addWidth(20.w),
+                          
                           Text(title, style: myStyle(size: 14.sp, weight: FontWeight.w500, color: wColor),),
-                          addWidth(109.w),
+                         const Spacer(),
                           suffixIcon!,
                         ],
                       ),

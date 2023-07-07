@@ -71,7 +71,7 @@ class OnBoardingScreenThree extends StatelessWidget {
                     width: 57.w,
                     height: 6.h,
                   ),
-                  addHeight(45.h),
+                  addHeight(58.h),
                   SizedBox(
                     width: 325.w,
                     height: 44.h,

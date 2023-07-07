@@ -8,151 +8,164 @@ class OrderSummaryScreen extends StatefulWidget {
 }
 
 class _OrderSummaryScreenState extends State<OrderSummaryScreen> {
-  bool darkMode = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        backgroundColor: darkMode ? containerColor : backgrColor,
-        body: Column(
-          children: [
-            addHeight(45.h),
-            Padding(
-              padding: const EdgeInsets.only(left: 32.5),
-              child: Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    
-                    IconButton(onPressed: (){
-                      Navigator.pop(context);
-                    },
-                     icon: Icon(
-                      Icons.arrow_back_ios,
-                      size: 20,
-                      color: wColor,
-                    ),)
-                  ],
-                ),
-              ),
-            ),
-            addHeight(30.h),
-            Text(
-              pmethods,
-              style:
-                  myStyle(color: wColor, size: 24.sp, weight: FontWeight.w700),
-            ),
-            addHeight(10.h),
-            SizedBox(
-              height: 40.h,
-              width: 255.w,
-              child: Text(
-                selectmethod,
-                textAlign: TextAlign.center,
-                style: myStyle(
-                    color: lgColor, size: 14.sp, weight: FontWeight.w500),
-              ),
-            ),
-            addHeight(18.h),
-            Container(
-              padding:
-                  EdgeInsets.only(left: 15, right: 15, top: 14, bottom: 14),
-              width: 327.w,
-              height: 80.h,
-              color: bgColor,
-              child: Row(
+        child: Scaffold(
+      backgroundColor: containerColor,
+      body: Padding(
+        padding: EdgeInsets.only(left: 30.w, right: 30.w),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14.r),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              addHeight(27.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    imgMasterCard,
-                    width: 50.w,
-                    height: 50.h,
+                  Text(
+                    orderSummary,
+                    style: myStyle(
+                        color: wColor, weight: FontWeight.w500, size: 18.sp),
+                  )
+                ],
+              ),
+              addHeight(32.h),
+              Row(
+                children: [
+                  Text(
+                    plan,
+                    style: myStyle(
+                        color: lgColor, weight: FontWeight.w500, size: 14.sp),
                   ),
-                  addWidth(25.w),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        mastercard,
-                        style: myStyle(
-                            color: wColor,
-                            size: 13.sp,
-                            weight: FontWeight.w500),
-                      ),
-                      addHeight(10.h),
-                      Text(
-                        mastercardtext,
-                        style: myStyle(
-                            color: lgColor,
-                            size: 13.sp,
-                            weight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                  addWidth(119.w),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: wColor,
-                    size: 18,
+                  Spacer(),
+                  Container(
+                    height: 24.h,
+                    width: 78.w,
+                    decoration: BoxDecoration(
+                      color: yColor,
+                      borderRadius: BorderRadius.all(Radius.circular(7.r)),
+                    ),
+                    child: Row(
+                      children: [
+                        addWidth(10.w),
+                        Image.asset(
+                          icCrown,
+                          color: backgrColor,
+                          width: 9.27.w,
+                          height: 7.82.h,
+                        ),
+                        addWidth(7.4.w),
+                        Text(premium, style: myStyle(
+                          color: containerColor, size: 11.sp,
+                          weight: FontWeight.w500
+                        ),),
+                      ],
+                    ),
                   ),
                 ],
               ),
-            ),
-            //second container starts from here
-            addHeight(20.h),
-            Container(
-              color: bgColor,
-              padding:
-                  EdgeInsets.only(left: 15, right: 15, top: 14, bottom: 14),
-              width: 327.w,
-              height: 80.h,
-              child: Row(
+              addHeight(20.h),
+              Row(
                 children: [
-                  Image.asset(
-                    imgVisa,
-                    width: 50.w,
-                    height: 50.h,
+                  Text(
+                    duration,
+                    style: myStyle(
+                        color: lgColor, weight: FontWeight.w500, size: 14.sp),
                   ),
-                  addWidth(25.w),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        visa,
-                        style: myStyle(
-                            color: wColor,
-                            size: 13.sp,
-                            weight: FontWeight.w500),
-                      ),
-                      addHeight(10.h),
-                      Text(
-                        visacardtext,
-                        style: myStyle(
-                            color: lgColor,
-                            size: 13.sp,
-                            weight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                  addWidth(118.w),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: wColor,
-                    size: 18,
+                  Spacer(),
+                  Text(
+                    '1 Year',
+                    style: myStyle(
+                        color: wColor, size: 14.sp, weight: FontWeight.w500),
                   ),
                 ],
               ),
-            ),
-            addHeight(324.h),
-            RoundedButton(
-              btname: proceed,
-              textStyle:
-                  myStyle(size: 14.sp, weight: FontWeight.w500, color: wColor),
-            )
-          ],
+              addHeight(20.h),
+              Divider(
+                color: lgColor,
+                thickness: 1,
+              ),
+              addHeight(20.h),
+              Row(
+                children: [
+                  Text(
+                    price,
+                    style: myStyle(
+                        color: lgColor, weight: FontWeight.w500, size: 14.sp),
+                  ),
+                  Spacer(),
+                  Text(
+                    '\$89.99',
+                    style: myStyle(
+                        color: wColor, size: 14.sp, weight: FontWeight.w500),
+                  ),
+                ],
+              ),
+              addHeight(20.h),
+               Row(
+                children: [
+                  Text(
+                    tax,
+                    style: myStyle(
+                        color: lgColor, weight: FontWeight.w500, size: 14.sp),
+                  ),
+                  Spacer(),
+                  Text(
+                    '\$8.9',
+                    style: myStyle(
+                        color: wColor, size: 14.sp, weight: FontWeight.w500),
+                  ),
+                ],
+              ),
+               addHeight(20.h),
+               Row(
+                children: [
+                  Text(
+                    discount,
+                    style: myStyle(
+                        color: lgColor, weight: FontWeight.w500, size: 14.sp),
+                  ),
+                  Spacer(),
+                  Text(
+                    ' -\$ 1',
+                    style: myStyle(
+                        color: rColor, size: 14.sp, weight: FontWeight.w500),
+                  ),
+                ],
+              ),
+                addHeight(20.h),
+              Divider(
+                color: lgColor,
+                thickness: 1,
+              ),
+              addHeight(20.h),
+               Row(
+                children: [
+                  Text(
+                    total,
+                    style: myStyle(
+                        color: lgColor, weight: FontWeight.w500, size: 14.sp),
+                  ),
+                  Spacer(),
+                  Text(
+                    ' -\$ 97.98',
+                    style: myStyle(
+                        color: wColor, size: 14.sp, weight: FontWeight.w500),
+                  ),
+                ],
+              ),
+              addHeight(40.h),
+              RoundedButton(btname: proceed, textStyle: myStyle(
+                color: wColor, size: 14.sp, weight: FontWeight.w500
+              ),)
+            ],
+          ),
         ),
       ),
-    );
+    ));
   }
 }

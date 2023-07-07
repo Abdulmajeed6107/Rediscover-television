@@ -1,6 +1,7 @@
 
 import 'package:flutter_application_john/controller/auth_conteroller.dart';
 import 'package:flutter_application_john/routes.dart';
+import 'package:flutter_application_john/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'const/const.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           onGenerateRoute: Routes.onGenerateRoute,
           initialRoute: '/',
-          home: BottomNavigationScreen(),
+          home: VikingRiviewScreen(),
         ),
       );
       },

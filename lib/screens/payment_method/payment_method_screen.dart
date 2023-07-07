@@ -84,7 +84,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       ),
                     ],
                   ),
-                  addWidth(119.w),
+                  Spacer(),
                   Icon(
                     Icons.arrow_forward_ios,
                     color: wColor,
@@ -130,7 +130,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       ),
                     ],
                   ),
-                  addWidth(116.w),
+                  Spacer(),
                   Icon(
                     Icons.arrow_forward_ios,
                     color: wColor,
@@ -142,16 +142,9 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
             addHeight(324.h),
             RoundedButton(
               onTap: () {
-                setState(() {
-                  darkMode = true;
-                });
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => OrderSummaryScreen(),
-
-                      
-                    ));
+                
+                   showModalBottomSheet(context: context,
+                    builder: (context) => OrderSummaryScreen(),);
               },
               btname: addcard,
               textStyle:
